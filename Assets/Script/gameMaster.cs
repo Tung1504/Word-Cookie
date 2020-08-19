@@ -21,7 +21,7 @@ public class gameMaster : MonoBehaviour
     public KeyCode RMB;
     public int wordLen;
     public string word3L = "WIN";
-    public static List<string> selectLetter = new List<string>() {"","",""};
+    public static List<string> selectLetter = new List<string>() {"","","","",""};
     public static int letterNum = 0;
     // Start is called before the first frame update
     void Start()
@@ -48,9 +48,9 @@ public class gameMaster : MonoBehaviour
                 {
                    
 
-                    letter1.GetComponent<TextMesh>().text = selectLetter[0];
-                    letter2.GetComponent<TextMesh>().text = selectLetter[1];
-                    letter3.GetComponent<TextMesh>().text = selectLetter[2];
+                    letter1.GetComponent<TextMesh>().text = selectLetter[1];
+                    letter2.GetComponent<TextMesh>().text = selectLetter[2];
+                    letter3.GetComponent<TextMesh>().text = selectLetter[3];
 
                 }
                 else
@@ -58,7 +58,7 @@ public class gameMaster : MonoBehaviour
                     Debug.Log("Wrong word");
                 }
             }
-            else if (wordLen > 3 && array.Length)
+            else if (wordLen > 3)
             {
                 
                 Debug.Log("Out of length");
