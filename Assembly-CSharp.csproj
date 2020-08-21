@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\buttonReset.cs" />
     <Compile Include="Assets\Script\clickController.cs" />
     <Compile Include="Assets\Script\gameMaster.cs" />
     <Reference Include="UnityEngine">

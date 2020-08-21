@@ -16,13 +16,19 @@ public class gameMaster : MonoBehaviour
     public Transform bttLetter3;
     public Transform bttLetter4;
 
-    public static List<string> availLetter = new List<string>() { "W", "I", "N", "E" };
+    private List<string> availLetter = new List<string>() { "W", "I", "N", "E" };
 
     public KeyCode RMB;
-    public int wordLen;
-    public string word3L = "WIN";
-    public static List<string> selectLetter = new List<string>() {"","","","",""};
+    public static int wordLen;
+
+    public static string word3L = "WIN";
+    public static List<string> selectLetter = new List<string>() { "", "", "", "" } ;
     public static int letterNum = 0;
+    
+
+    //private List<string> line = new List<string>();
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +42,7 @@ public class gameMaster : MonoBehaviour
     void Update()
     {
         spelledWord.GetComponent<TextMesh>().text = currentWord;
+        
         if (Input.GetKeyDown(RMB))
         {
             wordLen = currentWord.Length;
@@ -46,23 +53,42 @@ public class gameMaster : MonoBehaviour
              
                 if (currentWord == word3L)
                 {
-                   
-
-                    letter1.GetComponent<TextMesh>().text = selectLetter[1];
-                    letter2.GetComponent<TextMesh>().text = selectLetter[2];
-                    letter3.GetComponent<TextMesh>().text = selectLetter[3];
-
+                    
+                    letter1.GetComponent<TextMesh>().text = selectLetter[0];
+                    letter2.GetComponent<TextMesh>().text = selectLetter[1];
+                    letter3.GetComponent<TextMesh>().text = selectLetter[2];
+                    
                 }
                 else
                 {
+                    letterNum = 0;
+                    currentWord = string.Empty;  
                     Debug.Log("Wrong word");
+                    
+                    
                 }
             }
-            else if (wordLen > 3)
+            else if (wordLen != 3)
             {
-                
-                Debug.Log("Out of length");
+                currentWord = string.Empty;
+                Debug.Log("Maximum letters is 3");
             }
+        }
+
+        if (Input.GetKeyDown("g"))
+        {
+            
+            Debug.Log(selectLetter.Capacity);
+            
+            
+            Debug.Log(letterNum);
+            letterNum = 0;
+            currentWord = string.Empty;
+            foreach (string item in selectLetter)
+            {
+                Debug.Log(item);
+            }
+            Debug.Log("À thôi mày chạy được rồi đấy");
         }
     }
 }
