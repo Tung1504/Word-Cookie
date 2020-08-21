@@ -12,10 +12,10 @@ public class buttonReset : MonoBehaviour
     {
         SceneManager.LoadScene("Basic");
 
-        Debug.Log("SelectLetterCapacity: " + gameMaster.selectLetter.Capacity);
+        //Debug.Log("SelectLetterCapacity: " + gameMaster.selectLetter.Capacity);
 
 
-        Debug.Log("LetterNum: " + gameMaster.letterNum);
+        //Debug.Log("LetterNum: " + gameMaster.letterNum);
         gameMaster.letterNum = 0;
         gameMaster.currentWord = string.Empty;
         gameMaster.selectLetter.Clear();
@@ -27,12 +27,12 @@ public class buttonReset : MonoBehaviour
         abc.Add("");
 
         gameMaster.selectLetter.AddRange(abc);
-        foreach (string item in gameMaster.selectLetter)
-        {
-            Debug.Log(item);
-        }
-        Debug.Log("CurrentWord: " + gameMaster.currentWord);
-        Debug.Log("Ờ oke");
+        //foreach (string item in gameMaster.selectLetter)
+        //{
+        //    Debug.Log(item);
+        //}
+        //Debug.Log("CurrentWord: " + gameMaster.currentWord);
+        //Debug.Log("Ờ oke");
     }
 
 

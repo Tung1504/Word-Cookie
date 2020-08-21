@@ -21,15 +21,8 @@ public class clickController : MonoBehaviour
 
         if (gameMaster.letterNum <= gameMaster.selectLetter.Capacity)
         {
-            if (gameMaster.selectLetter.Contains(GetComponent<TextMesh>().text))
-            //{
-            //    gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            //}
-            //else
-            //{
-                //gameObject.GetComponent<BoxCollider2D>().enabled = true;
-                gameMaster.selectLetter[gameMaster.letterNum - 1] = GetComponent<TextMesh>().text;
-            //}
+            gameMaster.selectLetter[gameMaster.letterNum - 1] = GetComponent<TextMesh>().text;
+        
         }
 
 

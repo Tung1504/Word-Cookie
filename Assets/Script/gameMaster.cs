@@ -18,11 +18,11 @@ public class gameMaster : MonoBehaviour
     public Transform bttLetter4;
 
     private List<string> availLetter = new List<string>() { "W", "I", "N", "E" };
-
+    private List<string> answer = new List<string>() { "WIN", "NEW" };
     public KeyCode RMB;
     public static int wordLen;
 
-    public static string word3L = "WIN";
+    //public static string word3L = "WIN";
     public static List<string> selectLetter = new List<string>() { "", "", "", "" } ;
     public static int letterNum = 0;
     
@@ -47,40 +47,39 @@ public class gameMaster : MonoBehaviour
         if (Input.GetKeyDown(RMB))
         {
             wordLen = currentWord.Length;
-            
 
+            
             if (wordLen == 3)
             {
-             
-                if (currentWord == word3L)
-                {
-                    foreach (string item in selectLetter)
+                
+                    if (answer.Contains(currentWord))
                     {
-                        Debug.Log(item);
+
+
+                        letter1.GetComponent<TextMesh>().text = selectLetter[0];
+                        letter2.GetComponent<TextMesh>().text = selectLetter[1];
+                        letter3.GetComponent<TextMesh>().text = selectLetter[2];
+                        Debug.Log("Correct Word. Press Restart to play again.");
+
                     }
-                    letter1.GetComponent<TextMesh>().text = selectLetter[0];
-                    letter2.GetComponent<TextMesh>().text = selectLetter[1];
-                    letter3.GetComponent<TextMesh>().text = selectLetter[2];
-                    
-                }
-                else
-                {
-                    foreach (string item in selectLetter)
+
+                    else /*if (currentWord != item)*/
                     {
-                        Debug.Log(item);
+
+                        //letterNum = 0;
+                        //currentWord = string.Empty;  
+                        Debug.Log("Wrong word. Press Restart to try again.");
+
+
                     }
-                    letterNum = 0;
-                    currentWord = string.Empty;  
-                    Debug.Log("Wrong word");
-                    
-                    
-                }
+                
             }
             else if (wordLen != 3)
             {
-                letterNum = 0;
-                currentWord = string.Empty;
-                Debug.Log("Maximum letters is 3");
+                
+                //letterNum = 0;
+                //currentWord = string.Empty;
+                Debug.Log("Maximum letters is 3. Press Restart to try again.");
             }
         }
 
