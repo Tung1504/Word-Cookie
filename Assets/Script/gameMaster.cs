@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class gameMaster : MonoBehaviour
@@ -53,7 +54,10 @@ public class gameMaster : MonoBehaviour
              
                 if (currentWord == word3L)
                 {
-                    
+                    foreach (string item in selectLetter)
+                    {
+                        Debug.Log(item);
+                    }
                     letter1.GetComponent<TextMesh>().text = selectLetter[0];
                     letter2.GetComponent<TextMesh>().text = selectLetter[1];
                     letter3.GetComponent<TextMesh>().text = selectLetter[2];
@@ -61,6 +65,10 @@ public class gameMaster : MonoBehaviour
                 }
                 else
                 {
+                    foreach (string item in selectLetter)
+                    {
+                        Debug.Log(item);
+                    }
                     letterNum = 0;
                     currentWord = string.Empty;  
                     Debug.Log("Wrong word");
@@ -70,25 +78,37 @@ public class gameMaster : MonoBehaviour
             }
             else if (wordLen != 3)
             {
+                letterNum = 0;
                 currentWord = string.Empty;
                 Debug.Log("Maximum letters is 3");
             }
         }
 
-        if (Input.GetKeyDown("g"))
-        {
+        //if (Input.GetKeyDown("g"))
+        //{
             
-            Debug.Log(selectLetter.Capacity);
+        //    Debug.Log(selectLetter.Capacity);
             
             
-            Debug.Log(letterNum);
-            letterNum = 0;
-            currentWord = string.Empty;
-            foreach (string item in selectLetter)
-            {
-                Debug.Log(item);
-            }
-            Debug.Log("À thôi mày chạy được rồi đấy");
-        }
+        //    Debug.Log(letterNum);
+        //    letterNum = 0;
+        //    currentWord = string.Empty;
+        //    selectLetter.Clear();
+            
+        //    List<string> abc = new List<string>();
+        //    abc.Add("");
+        //    abc.Add("");
+        //    abc.Add("");
+        //    abc.Add("");
+
+        //    selectLetter.AddRange(abc);
+        //    foreach (string item in selectLetter)
+        //    {
+        //        Debug.Log(item);
+        //    }
+        //    Debug.Log(currentWord);
+        //    Debug.Log("Ờ oke");
+            
+        //}
     }
 }

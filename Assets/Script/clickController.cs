@@ -13,15 +13,23 @@ public class clickController : MonoBehaviour
 
     void OnMouseDown()
     {
-        /*gameObject.GetComponent<BoxCollider2D>().enabled = false;*/
-        
-        
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+
         gameMaster.currentWord += GetComponent<TextMesh>().text;
         gameMaster.letterNum += 1;
 
         if (gameMaster.letterNum <= gameMaster.selectLetter.Capacity)
         {
-            gameMaster.selectLetter[gameMaster.letterNum - 1] = GetComponent<TextMesh>().text;
+            if (gameMaster.selectLetter.Contains(GetComponent<TextMesh>().text))
+            //{
+            //    gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            //}
+            //else
+            //{
+                //gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                gameMaster.selectLetter[gameMaster.letterNum - 1] = GetComponent<TextMesh>().text;
+            //}
         }
 
 
