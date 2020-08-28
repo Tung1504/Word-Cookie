@@ -16,15 +16,26 @@ public class buttonReset : MonoBehaviour
 
 
         //Debug.Log("LetterNum: " + gameMaster.letterNum);
+        //foreach (string word in gameMaster.selectLetter)
+        //{
+
+        //}
         gameMaster.letterNum = 0;
         gameMaster.currentWord = string.Empty;
         gameMaster.selectLetter.Clear();
 
         List<string> abc = new List<string>();
-        abc.Add("");
-        abc.Add("");
-        abc.Add("");
-        abc.Add("");
+        for (int i = 0; i < 5; i++)
+        {
+            abc.Add("");
+        }    
+        
+        
+        
+        //abc.Add("");
+        //abc.Add("");
+        //abc.Add("");
+        //abc.Add("");
 
         gameMaster.selectLetter.AddRange(abc);
         //foreach (string item in gameMaster.selectLetter)
