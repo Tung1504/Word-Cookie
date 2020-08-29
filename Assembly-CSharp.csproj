@@ -69,15 +69,14 @@
     <Compile Include="Assets\Script\ForUpdateScene\level.cs" />
     <Compile Include="Assets\Script\ForUpdateScene\levelData.cs" />
     <Compile Include="Assets\Script\ForUpdateScene\preview.cs" />
-    <Compile Include="Assets\Script\MaxWord.cs" />
     <Compile Include="Assets\Script\beingClicked.cs" />
     <Compile Include="Assets\Script\buttonReset.cs" />
     <Compile Include="Assets\Script\clickController.cs" />
     <Compile Include="Assets\Script\gameMaster.cs" />
     <Compile Include="Assets\Script\hintButton.cs" />
     <Compile Include="Assets\Script\line.cs" />
+    <Compile Include="Assets\Script\lineBlock.cs" />
     <Compile Include="Assets\Script\previewController.cs" />
-    <Compile Include="Assets\Script\wrongWord.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3bec971dd17b4841a0955825f623bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  line: {fileID: 6452366656899242478, guid: d9df035d1352e354d8bcc05f5803f33f, type: 3}
 --- !u!1 &1142377918871079019
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,17 +184,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1142377918871079019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b223bb80228e7b54d8bd6b327bd9cb51, type: 3}
+  m_Script: {fileID: 11500000, guid: cab4ff0b10a7e3f4b99bb130e850cadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spelledWord: {fileID: 2633487445310425486}
-  letter1: {fileID: 5839584044591471175}
-  letter2: {fileID: 6755619833856647580}
-  letter3: {fileID: 553806715910118577}
-  bttLetter1: {fileID: 0}
-  bttLetter2: {fileID: 0}
-  bttLetter3: {fileID: 0}
-  bttLetter4: {fileID: 0}
+  levelData: {fileID: 11400000, guid: 673f7936113e5c74680ba058c21bacc1, type: 2}
+  letter1: {fileID: 553806715910118577}
+  letter2: {fileID: 5839584044591471175}
+  letter3: {fileID: 6755619833856647580}
+  wrong: {fileID: 6447740446149448432, guid: d08b9d972aa26ec4daf1159f81de8a0a, type: 3}
+  right: {fileID: 8606227571749821387, guid: 1dd0364ee37433049bafb2a189717257, type: 3}
   RMB: 324
 --- !u!1 &1371130692277379739
 GameObject:
@@ -876,6 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3bec971dd17b4841a0955825f623bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  line: {fileID: 6452366656899242478, guid: d9df035d1352e354d8bcc05f5803f33f, type: 3}
 --- !u!1 &5451075368304478588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +1015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3bec971dd17b4841a0955825f623bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  line: {fileID: 6452366656899242478, guid: d9df035d1352e354d8bcc05f5803f33f, type: 3}
 --- !u!114 &893771491196436614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,6 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3bec971dd17b4841a0955825f623bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  line: {fileID: 6452366656899242478, guid: d9df035d1352e354d8bcc05f5803f33f, type: 3}
 --- !u!1 &8091756839375076317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,6 +1389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3bec971dd17b4841a0955825f623bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  line: {fileID: 0}
 --- !u!114 &7864333040656297041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,6 +1419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Letter
+      objectReference: {fileID: 0}
+    - target: {fileID: 551676908519686180, guid: 77821c45c44866242b3cf8d8ccc5d9ea,
+        type: 3}
+      propertyPath: m_Text
+      value: '@'
       objectReference: {fileID: 0}
     - target: {fileID: 8551835978269599013, guid: 77821c45c44866242b3cf8d8ccc5d9ea,
         type: 3}
@@ -1520,6 +1529,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551835978269599013, guid: 77821c45c44866242b3cf8d8ccc5d9ea,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551835978269599013, guid: 77821c45c44866242b3cf8d8ccc5d9ea,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77821c45c44866242b3cf8d8ccc5d9ea, type: 3}
