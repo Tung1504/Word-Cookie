@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - OverlayDialog
+  - RubyBalance
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - Text
+  - 
   - 
   - 
   - 
@@ -41,9 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UI
-    uniqueID: 1380139989
+  - name: MyLineRenderer
+    uniqueID: 4079191425
     locked: 0
-  - name: Gameplay
-    uniqueID: 4153693885
+  - name: UI
+    uniqueID: 2409401001
+    locked: 0
+  - name: UI2
+    uniqueID: 3384533473
     locked: 0

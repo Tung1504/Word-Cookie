@@ -58,3 +58,38 @@ The following packages were updated:
   com.unity.timeline from version 1.1.0 to 1.2.6
 The following packages were removed:
   com.unity.package-manager-ui@2.2.0
+
+=== Mon Sep  7 10:51:24 2020
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.ads@2.0.8
+  com.unity.analytics@2.0.16
+  com.unity.package-manager-ui@1.9.11
+  com.unity.purchasing@2.0.3
+
+=== Mon Sep  7 12:02:36 2020
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.package-manager-ui@1.9.11
+
+=== Mon Sep  7 15:46:08 2020
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.package-manager-ui@1.9.11
+
+=== Mon Sep  7 23:13:39 2020
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.package-manager-ui@1.9.11

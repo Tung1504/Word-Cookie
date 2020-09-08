@@ -3,74 +3,148 @@ using System.Collections.Generic;
 
 using UnityEditor.UI;
 using UnityEngine;
-
+using UnityEngine.Windows.Speech;
 
 public class gameMaster : MonoBehaviour
 {
 
 
     public static string currentWord;
-    public Transform spelledWord;
+    public GameObject spelledWord;
 
     public levelData levelData;
 
-    public Transform letter1;
-    public Transform letter2;
-    public Transform letter3;
+    
 
 
     public GameObject wrong;
     public GameObject right;
 
+    public GameObject letter;
 
-    //public Transform bttLetter1;
-    //public Transform bttLetter2;
-    //public Transform bttLetter3;
-    //public Transform bttLetter4;
 
-    //private List<string> availLetter = new List<string>() { "W", "I", "N", "E" };
-    public static List<string> answers = new List<string>() /*{ "WIN"/*, "NEW"*/  ;
+
+    public Transform letterAns;
+
+    
+
+    
+    public static List<string> answers = new List<string>()   ;
     public KeyCode RMB;
     public static int wordLen;
 
-    //public static string word3L = "WIN";
-    public static List<string> selectLetter = new List<string>() /*{ "", "", "", "" }*/ ;
+    
+    public static List<string> selectLetter = new List<string>() ;
     public static int letterNum = 0;
 
 
-    //private List<string> line = new List<string>();
+    List<char> let = new List<char>();
 
 
     // Start is called before the first frame update
     void Start()
     {
         string[] answerC = levelData.answer.Split(',');
-        //for (int i = 0; i < 1; i++)
-        //{
+        
             foreach (string c in answerC)
             {
                 answers.Add(c);
+            
+            
             }
-        //}        
-        foreach (string a in answers)        
-        {        
-            Debug.Log(a);            
-        }
+
+
+        //for (var i = 0; i < )
+
+                
         
-            //bttLetter1.GetComponent<TextMesh>().text = availLetter[0];
-            //bttLetter2.GetComponent<TextMesh>().text = availLetter[1];
-            //bttLetter3.GetComponent<TextMesh>().text = availLetter[2];
-            //bttLetter4.GetComponent<TextMesh>().text = availLetter[3];
-        for (int y = 0; y < 5; y++)
-        {
-            selectLetter.Add("");
-        }
-            Debug.Log("S: " + selectLetter.Count);
+
+     
+            
+        
+        //foreach (char b in let)
+        //{
+        //    Debug.Log(b);
+        //}    
+
+        //for (int i = 0; i < let.Count; i++)
+        //{
+        //    Instantiate(letterAns, new Vector3(0, i * 0.5f, 0), letter.transform.rotation);
+        //}    
+
+
+        
+        //string[] chars = answers.ToArray();
+ 
+        
+        
+
+
+        //for (int i = 0; i < chars.Length; i ++)
+        //{
+        //    foreach (string d in chars)
+        //    {
+        //        Debug.Log(d);
+             
+        //        letterAns.GetComponent<TextMesh>().text = chars[i];
+        //    }
+        //    Instantiate(letterAns, new Vector3(0, i * 0.5f, 0), letter.transform.rotation);
+        //}    
+        
+
+        //foreach (string d in chars)
+        //{
+        //    for (int i = 0; i < d.Length; i++)
+        //    {   
+                
+
+        //        Instantiate(letterAns, new Vector3(0, i * 0.5f, 0.5f), letter.transform.rotation);
+        //    }    
+        //}    
+
+
+        
+        
+       
         
     }
-        // Update is called once per frame
-        void Update()
+
+
+    
+    public void Create()
+    {
+        for (int i = 0; i < answers.Count; i++)
         {
+           foreach (string a in answers)
+           {
+               letter.GetComponent<TextMesh>().text = answers[i];
+
+           }
+           Instantiate(letter,new Vector3(0, i * 0.5f, 0), letter.transform.rotation);
+        }
+    }    
+
+
+    public void Answer()
+    {
+        //List<>
+
+
+
+
+
+    }
+
+
+
+
+
+        // Update is called once per frame
+    void Update()
+    {
+        
+
+
             spelledWord.GetComponent<TextMesh>().text = currentWord;
 
             if (Input.GetKeyDown(RMB))
@@ -78,29 +152,36 @@ public class gameMaster : MonoBehaviour
                 wordLen = currentWord.Length;
 
 
-                //if (wordLen <= 3)
-                //{
-
-                    if (answers.Contains(currentWord))
+                if (answers.Contains(currentWord))
+                {
+                    for (int i = 0; i < selectLetter.Count; i++)
                     {
+                        
+                        letterAns.GetComponent<TextMesh>().text = selectLetter[i];
+                        
+                        Instantiate(letterAns, new Vector3(i * 0.5f, 0, 0), letter.transform.rotation);
 
-                        Instantiate(right);
-                        letter1.GetComponent<TextMesh>().text = selectLetter[0];
-                        letter2.GetComponent<TextMesh>().text = selectLetter[1];
-                        letter3.GetComponent<TextMesh>().text = selectLetter[2];
-                        Debug.Log("Correct Word. Press Restart to play again.");
 
                     }
+                    Instantiate(right);
+                        //letter1.GetComponent<TextMesh>().text = selectLetter[0];
+                        //letter2.GetComponent<TextMesh>().text = selectLetter[1];
+                        //letter3.GetComponent<TextMesh>().text = selectLetter[2];
+                    Debug.Log("Correct Word. Press Restart to play again.");
+                         
 
-                    else /*if (currentWord != item)*/
-                    {
-                        Instantiate(wrong);
+                }
+
+                else /*if (currentWord != item)*/
+                {
+                    Instantiate(wrong);
                         //letterNum = 0;
                         //currentWord = string.Empty;  
-                        Debug.Log("Wrong word. Press Restart to try again.");
+                    Debug.Log("Wrong word. Press Restart to try again.");
+                    
 
 
-                    }
+                }
 
                 //}
                 //else if (wordLen > 3)
@@ -110,33 +191,8 @@ public class gameMaster : MonoBehaviour
                 //    //currentWord = string.Empty;
                 //    Debug.Log("Maximum letters is 3. Press Restart to try again.");
                 //}
-            }
+            }       
 
-            //if (Input.GetKeyDown("g"))
-            //{
-
-            //    Debug.Log(selectLetter.Capacity);
-
-
-            //    Debug.Log(letterNum);
-            //    letterNum = 0;
-            //    currentWord = string.Empty;
-            //    selectLetter.Clear();
-
-            //    List<string> abc = new List<string>();
-            //    abc.Add("");
-            //    abc.Add("");
-            //    abc.Add("");
-            //    abc.Add("");
-
-            //    selectLetter.AddRange(abc);
-            //    foreach (string item in selectLetter)
-            //    {
-            //        Debug.Log(item);
-            //    }
-            //    Debug.Log(currentWord);
-            //    Debug.Log("Ờ oke");
-
-            //}
-        }
+           
     }
+}

@@ -9,12 +9,23 @@ public class line : MonoBehaviour
     private List<Vector3> pointsList;
     public GameObject lineParticle;
 
+    public static line instance;
+
+    public GameObject letter;
+
+
     //bool isDragging;
     public letterChoice letterChoice;
 
+
     void Awake()
     {
+        instance = this;   
+    }
 
+    void Start()
+    {
+        
         dline = gameObject.GetComponent<LineRenderer>();
         if (dline == null)
         {
@@ -28,6 +39,9 @@ public class line : MonoBehaviour
         isMousePressed = false;
         pointsList = new List<Vector3>();
         lineParticle.SetActive(false);
+
+        
+
     }
 
     void Update()
